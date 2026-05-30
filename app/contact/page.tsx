@@ -175,10 +175,9 @@ export default function ContactPage() {
               </h3>
 
               <div className="space-y-6">
-                <ContactCard icon={<Mail size={20} className="text-[#D46F50]" />} label="Email Address" value="urs.shalini.m@gmail.com" href="mailto:urs.shalini.m@gmail.com" />
+                <ContactCard icon={<Mail size={20} className="text-[#D46F50]" />} label="Email Address" value="urs.shalini.m@gmail.com" href="mailto:sm978546@gmail.com" />
                 <ContactCard icon={<Linkedin size={20} className="text-[#F2CC8F]" />} label="LinkedIn Connection" value="Shalini Mishra" href="https://www.linkedin.com/in/shalini-mishra-670b74227" />
                 <ContactCard icon={<Github size={20} className="text-[#81B29A]" />} label="GitHub Repository" value="@Shalini0309" href="https://github.com/Shalini0309" />
-                <ContactCard icon={<Phone size={20} className="text-emerald-400" />} label="Voice Call" value="+91 7740248828" href="tel:+917740248828" />
               </div>
             </div>
 
