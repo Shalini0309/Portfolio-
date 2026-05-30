@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4.7%;
+    --foreground: 0 0% 80%;
+    --card: 0 0% 11.8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 4.7%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 168 55% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 48 89% 50%;
+    --secondary-foreground: 0 0% 5%;
+    --muted: 0 0% 53.3%;
+    --muted-foreground: 0 0% 53.3%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 168 55% 55%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 168 55% 55%;
+    --radius: 0rem;
+    --success: 129 67% 47%;
+  }
+
+  /* Blinking cursor animation */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .animate-cursor {
+    animation: blink 1s step-end infinite;
+  }
+
+  /* Scanline effect */
+  .scanlines {
+    position: relative;
+    overflow: hidden;
+  }
+  .scanlines::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 50;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+
+  /* CRT Flicker */
+  @keyframes flicker {
+    0% { opacity: 0.97; }
+    5% { opacity: 0.95; }
+    10% { opacity: 0.9; }
+    15% { opacity: 0.95; }
+    20% { opacity: 0.98; }
+    25% { opacity: 0.95; }
+    30% { opacity: 0.97; }
+    100% { opacity: 1; }
+  }
+  .crt-flicker {
+    animation: flicker 0.1s infinite;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Designer Mode Enhancements */
+:root {
+  --primary-rgb: 78, 201, 176;
+}
+
+/* Figma-Style dot grid background */
+.figma-grid {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.designer-mode {
+  --background: 30 15% 7%; /* Deep clay gray */
+  --foreground: 40 20% 90%; /* Soft cream */
+  --primary: 14 65% 62%; /* Beautiful Warm Terracotta (#D46F50) */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 40 60% 75%; /* Cozy warm sandstone sand */
+  --border: 30 10% 15%;
+}
+
+.designer-mode body {
+  background-color: #0F0E0D;
+  color: #E6E2DE;
+  font-family: var(--font-sans), system-ui, sans-serif !important;
+}
+
+/* Handwritten Font Utility */
+.font-handwritten {
+  font-family: var(--font-handwritten), cursive !important;
+}
+
+/* Human Sticky Note Accent */
+.sticky-note {
+  background: linear-gradient(135deg, #FFF6BD 0%, #FFE9A0 100%);
+  color: #382405;
+  font-family: var(--font-handwritten), cursive !important;
+  box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.25);
+  border-bottom-right-radius: 20px 4px;
+  border-bottom-left-radius: 4px 15px;
+  border-top-left-radius: 5px 4px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sticky-note::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 30%;
+  width: 50px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transform: rotate(-1deg);
+  backdrop-filter: blur(1px);
+}
+
+.sticky-note:hover {
+  transform: scale(1.04) rotate(1deg);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Glassmorphism Clay Cards */
+.glass-card {
+  background: rgba(22, 20, 18, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(224, 122, 95, 0.1);
+  box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.45);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(224, 122, 95, 0.3);
+  background: rgba(22, 20, 18, 0.8);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px 0 rgba(224, 122, 95, 0.08);
+}
+
+/* Warm Clay Glow Badge */
+.glow-badge {
+  background: linear-gradient(135deg, rgba(224, 122, 95, 0.12) 0%, rgba(242, 204, 143, 0.08) 100%);
+  border: 1px solid rgba(224, 122, 95, 0.25);
+  color: #F2CC8F;
+  text-shadow: 0 0 8px rgba(224, 122, 95, 0.2);
+}
+
+/* Smooth layout morphing transitions */
+* {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom organic sandstone progress bar */
+.progress-bar-fill {
+  background: linear-gradient(90deg, #D46F50 0%, #F2CC8F 100%);
+  box-shadow: 0 0 6px rgba(212, 111, 80, 0.3);
+}
+
+
