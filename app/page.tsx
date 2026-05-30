@@ -141,7 +141,7 @@ export default function Home() {
               </div>
 
               <a
-                href="/Shalini_Resume.pdf"
+                href="/Shalini .pdf"
                 download
                 className="bg-gradient-to-r from-[#D46F50] to-[#F2CC8F] text-[#1E1C1A] px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-[#D46F50]/10 hover:brightness-110 transition-all active:scale-95 text-xs uppercase tracking-wider"
               >
